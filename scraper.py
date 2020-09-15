@@ -15,13 +15,13 @@ dtstart = datetime.now(tz=au_tz).strftime("%Y-%m-%d %H:%M:%S")
 dtend = None
 eoddate = None
 
-#scraperwiki.sqlite.execute("drop table if exists RunHistory")  
+scraperwiki.sqlite.execute("drop table if exists RunHistory")  
 scraperwiki.sqlite.execute("create table RunHistory (`Start_DateTime` string NOT NULL, `End_DateTime` string, `Company_EOD_Date` string, UNIQUE (`Start_DateTime`, `Company_EOD_Date`))")
 
-if 1==1:
-
-    scraperwiki.sqlite.execute("insert or replace into RunHistory values (?, ?, ?)",  [dtstart, dtend, eoddate]) 
-    scraperwiki.sqlite.commit() 
+#if 1==1:
+#
+#    scraperwiki.sqlite.execute("insert or replace into RunHistory values (?, ?, ?)",  [dtstart, dtend, eoddate]) 
+#    scraperwiki.sqlite.commit() 
 
 if 1==1:
 
@@ -38,7 +38,7 @@ if 1==1:
 
 
 
-    #scraperwiki.sqlite.execute("drop table if exists company")  
+    scraperwiki.sqlite.execute("drop table if exists company")  
     scraperwiki.sqlite.execute("create table company (`Rank` integer, `Code` string NOT NULL, `Company` string, `Price` real, `Change` real, `Perc_Change` real, `Perc_Change_1_Year` real, `Market_Cap` integer, `EOD_Date` string NOT NULL, UNIQUE (`Code`, `EOD_Date`))")
     #scraperwiki.sqlite.execute("delete from company")  
 
@@ -86,7 +86,7 @@ if 1==1:
 
     dtend = datetime.now(tz=au_tz).strftime("%Y-%m-%d %H:%M:%S")
      
-    scraperwiki.sqlite.execute("insert or replace into RunHistory values (?, ?, ?)",  [dtstart, dtend, eoddate]) 
+    scraperwiki.sqlite.execute("insert into RunHistory values (?, ?, ?)",  [dtstart, dtend, eoddate]) 
     #scraperwiki.sqlite.execute("insert or replace into RunHistory values (?, ?, ?)",  [dtstart, dtend, eoddate1])     
     scraperwiki.sqlite.commit() 
     

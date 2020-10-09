@@ -24,11 +24,8 @@ eoddate = None
 #    scraperwiki.sqlite.commit() 
 
 if 1==1:
-
-    #"https://www.marketindex.com.au/asx-listed-companies"
-                
-                
-    urllist = ["http://webcache.googleusercontent.com/search?q=cache:https://www.marketindex.com.au/asx-listed-companies"]
+                  
+    urllist = ["http://webcache.googleusercontent.com/search?q=cache:https://www.marketindex.com.au/asx-listed-companies", "https://www.marketindex.com.au/asx-listed-companies"]
     for url in urllist:
     
         br = mechanize.Browser()
